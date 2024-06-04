@@ -1,0 +1,19 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name    | Type         | Params
+-----------------------------------------
+0 | feat    | PointNetfeat | 2.8 M
+1 | fc1     | Linear       | 524 K
+2 | fc2     | Linear       | 131 K
+3 | fc3     | Linear       | 4.1 K
+4 | dropout | Dropout      | 0
+5 | bn1     | BatchNorm1d  | 1.0 K
+6 | bn2     | BatchNorm1d  | 512
+7 | relu    | ReLU         | 0
+-----------------------------------------
+3.5 M     Trainable params
+0         Non-trainable params
+3.5 M     Total params
+13.861    Total estimated model params size (MB)
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:492: Your `val_dataloader`'s sampler has shuffling enabled, it is strongly recommended that you turn shuffling off for val/test dataloaders.
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.

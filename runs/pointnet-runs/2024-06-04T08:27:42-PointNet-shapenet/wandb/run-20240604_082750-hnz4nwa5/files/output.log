@@ -1,0 +1,233 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name    | Type         | Params
+-----------------------------------------
+0 | feat    | PointNetfeat | 2.8 M
+1 | fc1     | Linear       | 524 K
+2 | fc2     | Linear       | 131 K
+3 | fc3     | Linear       | 4.1 K
+4 | dropout | Dropout      | 0
+5 | bn1     | BatchNorm1d  | 1.0 K
+6 | bn2     | BatchNorm1d  | 512
+7 | relu    | ReLU         | 0
+-----------------------------------------
+3.5 M     Trainable params
+0         Non-trainable params
+3.5 M     Total params
+13.861    Total estimated model params size (MB)
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:492: Your `val_dataloader`'s sampler has shuffling enabled, it is strongly recommended that you turn shuffling off for val/test dataloaders.
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name    | Type         | Params
+-----------------------------------------
+0 | feat    | PointNetfeat | 2.8 M
+1 | fc1     | Linear       | 524 K
+2 | fc2     | Linear       | 131 K
+3 | fc3     | Linear       | 4.1 K
+4 | dropout | Dropout      | 0
+5 | bn1     | BatchNorm1d  | 1.0 K
+6 | bn2     | BatchNorm1d  | 512
+7 | relu    | ReLU         | 0
+-----------------------------------------
+3.5 M     Trainable params
+0         Non-trainable params
+3.5 M     Total params
+13.861    Total estimated model params size (MB)
+/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+Metric val_loss improved. New best score: 2.807
+Epoch 0, global step 342: 'val_loss' reached 2.80731 (best 2.80731), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=0-val_loss=2.807.ckpt' as top 3
+Metric val_loss improved by 0.030 >= min_delta = 0.0. New best score: 2.778
+Epoch 1, global step 684: 'val_loss' reached 2.77758 (best 2.77758), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=1-val_loss=2.778.ckpt' as top 3
+Metric val_loss improved by 0.095 >= min_delta = 0.0. New best score: 2.682
+Epoch 2, global step 1026: 'val_loss' reached 2.68234 (best 2.68234), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=2-val_loss=2.682.ckpt' as top 3
+Metric val_loss improved by 1.525 >= min_delta = 0.0. New best score: 1.157
+Epoch 3, global step 1368: 'val_loss' reached 1.15730 (best 1.15730), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=3-val_loss=1.157.ckpt' as top 3
+Metric val_loss improved by 0.652 >= min_delta = 0.0. New best score: 0.505
+Epoch 4, global step 1710: 'val_loss' reached 0.50502 (best 0.50502), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=4-val_loss=0.505.ckpt' as top 3
+Metric val_loss improved by 0.336 >= min_delta = 0.0. New best score: 0.169
+Epoch 5, global step 2052: 'val_loss' reached 0.16859 (best 0.16859), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=5-val_loss=0.169.ckpt' as top 3
+Epoch 6, global step 2394: 'val_loss' reached 0.19892 (best 0.16859), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=6-val_loss=0.199.ckpt' as top 3
+Metric val_loss improved by 0.044 >= min_delta = 0.0. New best score: 0.124
+Epoch 7, global step 2736: 'val_loss' reached 0.12412 (best 0.12412), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=7-val_loss=0.124.ckpt' as top 3
+Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.115
+Epoch 8, global step 3078: 'val_loss' reached 0.11544 (best 0.11544), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=8-val_loss=0.115.ckpt' as top 3
+Epoch 9, global step 3420: 'val_loss' was not in top 3
+Epoch 10, global step 3762: 'val_loss' was not in top 3
+Metric val_loss improved by 0.024 >= min_delta = 0.0. New best score: 0.091
+Epoch 11, global step 4104: 'val_loss' reached 0.09150 (best 0.09150), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=11-val_loss=0.091.ckpt' as top 3
+Metric val_loss improved by 0.020 >= min_delta = 0.0. New best score: 0.071
+Epoch 12, global step 4446: 'val_loss' reached 0.07146 (best 0.07146), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=12-val_loss=0.071.ckpt' as top 3
+Metric val_loss improved by 0.012 >= min_delta = 0.0. New best score: 0.059
+Epoch 13, global step 4788: 'val_loss' reached 0.05899 (best 0.05899), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=13-val_loss=0.059.ckpt' as top 3
+Epoch 14, global step 5130: 'val_loss' reached 0.07854 (best 0.05899), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=14-val_loss=0.079.ckpt' as top 3
+Epoch 15, global step 5472: 'val_loss' reached 0.07525 (best 0.05899), saving model to '/root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:27:42-PointNet-shapenet/weights/epoch=15-val_loss=0.075.ckpt' as top 3
+Monitored metric val_loss did not improve in the last 3 records. Best score: 0.059. Signaling Trainer to stop.
+Epoch 16, global step 5814: 'val_loss' was not in top 3
+/tmp/ipykernel_103148/1182581987.py:137: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  hydra.initialize(config_path=None)
+opt:
+  optimizers:
+  - name: RAdam
+    kwargs:
+      lr: 0.001
+  lr_schedulers:
+  - name: LinearWarmupLR
+    kwargs:
+      warm_end_steps: 1000
+data:
+  name: shapenet
+  data_root: /root/share/pointnet.pytorch/data
+  num_points: 2500
+model:
+  name: PointNet
+  cls:
+    layer1:
+      in_feature: 2028
+      out_feature: 1024
+    layer2:
+      in_feature: 1024
+      out_feature: 521
+    layer3:
+      in_feature: 521
+      out_feature: 16
+    dropout: 0.3
+  densecls:
+    k: 16
+    layer1:
+      conv1d_in_channel: 1088
+      conv1d_out_channel: 512
+      conv1d_kernel_size: 1
+    layer2:
+      conv1d_in_channel: 512
+      conv1d_out_channel: 256
+      conv1d_kernel_size: 1
+    layer3:
+      conv1d_in_channel: 256
+      conv1d_out_channel: 128
+      conv1d_kernel_size: 1
+    layer4:
+      conv1d_in_channel: 128
+      conv1d_kernel_size: 1
+  feat:
+    layer1:
+      conv1d_in_channel: 3
+      conv1d_out_channel: 128
+      conv1d_kernel_size: 1
+    layer2:
+      conv1d_in_channel: 128
+      conv1d_out_channel: 256
+      conv1d_kernel_size: 1
+    layer3:
+      conv1d_in_channel: 256
+      conv1d_out_channel: 1024
+      conv1d_kernel_size: 1
+    global_feat: true
+    feature_transform: true
+  stn:
+    k: 64
+    layer1:
+      conv1d_in_channel: 3
+      conv1d_out_channel: 128
+      conv1d_kernel_size: 1
+    layer2:
+      conv1d_in_channel: 128
+      conv1d_out_channel: 256
+      conv1d_kernel_size: 1
+    layer3:
+      conv1d_in_channel: 256
+      conv1d_out_channel: 2028
+      conv1d_kernel_size: 1
+    layer4:
+      fc1_in_features: 2028
+      fc1_out_features: 1024
+    layer5:
+      fc2_in_features: 1024
+      fc2_out_features: 512
+    layer6:
+      fc3_in_features: 512
+      fc3_out_features: 9
+train:
+  train_batch_size: 32
+  val_batch_size: 16
+  test_batch_size: 32
+  train_val_split:
+  - 0.9
+  - 0.1
+  run_root_dir: /root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:40:32-PointNet-shapenet
+  trainer_kwargs:
+    accelerator: auto
+    max_epochs: 50
+    val_check_interval: 1.0
+    log_every_n_steps: 100
+log:
+  loggers:
+    WandbLogger:
+      project: pointNet
+      name: 2024-06-04T08:40:32-PointNet-shapenet
+      tags:
+      - fastcampus_de_en_translate_tutorials
+      save_dir: /root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:40:32-PointNet-shapenet
+  callbacks:
+    ModelCheckpoint:
+      save_top_k: 3
+      monitor: val_loss
+      mode: min
+      verbose: true
+      dirpath: /root/share/pointnet.pytorch/runs/pointnet-runs/2024-06-04T08:40:32-PointNet-shapenet/weights
+      filename: '{epoch}-{val_loss:.3f}'
+    EarlyStopping:
+      monitor: val_loss
+      mode: min
+      patience: 3
+      verbose: true
+{'Airplane': 0, 'Bag': 1, 'Cap': 2, 'Car': 3, 'Chair': 4, 'Earphone': 5, 'Guitar': 6, 'Knife': 7, 'Lamp': 8, 'Laptop': 9, 'Motorbike': 10, 'Mug': 11, 'Pistol': 12, 'Rocket': 13, 'Skateboard': 14, 'Table': 15}
+{'Airplane': 4, 'Bag': 2, 'Cap': 2, 'Car': 4, 'Chair': 4, 'Earphone': 3, 'Guitar': 3, 'Knife': 2, 'Lamp': 4, 'Laptop': 2, 'Motorbike': 6, 'Mug': 2, 'Pistol': 3, 'Rocket': 3, 'Skateboard': 3, 'Table': 3} 4
+{'Airplane': 0, 'Bag': 1, 'Cap': 2, 'Car': 3, 'Chair': 4, 'Earphone': 5, 'Guitar': 6, 'Knife': 7, 'Lamp': 8, 'Laptop': 9, 'Motorbike': 10, 'Mug': 11, 'Pistol': 12, 'Rocket': 13, 'Skateboard': 14, 'Table': 15}
+{'Airplane': 4, 'Bag': 2, 'Cap': 2, 'Car': 4, 'Chair': 4, 'Earphone': 3, 'Guitar': 3, 'Knife': 2, 'Lamp': 4, 'Laptop': 2, 'Motorbike': 6, 'Mug': 2, 'Pistol': 3, 'Rocket': 3, 'Skateboard': 3, 'Table': 3} 4
+16
+PointNetCls(
+  (feat): PointNetfeat(
+    (stn): STN3d(
+      (conv1): Conv1d(3, 128, kernel_size=(1,), stride=(1,))
+      (conv2): Conv1d(128, 256, kernel_size=(1,), stride=(1,))
+      (conv3): Conv1d(256, 2028, kernel_size=(1,), stride=(1,))
+      (fc1): Linear(in_features=2028, out_features=1024, bias=True)
+      (fc2): Linear(in_features=1024, out_features=512, bias=True)
+      (fc3): Linear(in_features=512, out_features=9, bias=True)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn3): BatchNorm1d(2028, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (conv1): Conv1d(3, 128, kernel_size=(1,), stride=(1,))
+    (conv2): Conv1d(128, 256, kernel_size=(1,), stride=(1,))
+    (conv3): Conv1d(256, 1024, kernel_size=(1,), stride=(1,))
+    (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn3): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (fstn): STNkd(
+      (conv1): Conv1d(64, 128, kernel_size=(1,), stride=(1,))
+      (conv2): Conv1d(128, 256, kernel_size=(1,), stride=(1,))
+      (conv3): Conv1d(256, 2028, kernel_size=(1,), stride=(1,))
+      (fc1): Linear(in_features=2028, out_features=1024, bias=True)
+      (fc2): Linear(in_features=1024, out_features=512, bias=True)
+      (fc3): Linear(in_features=512, out_features=4096, bias=True)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn3): BatchNorm1d(2028, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU()
+    )
+  )
+  (fc1): Linear(in_features=2028, out_features=1024, bias=True)
+  (fc2): Linear(in_features=1024, out_features=521, bias=True)
+  (fc3): Linear(in_features=521, out_features=16, bias=True)
+  (dropout): Dropout(p=0.3, inplace=False)
+  (bn1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2): BatchNorm1d(521, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU()
+)

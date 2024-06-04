@@ -1,0 +1,147 @@
+{
+    "os": "Linux-6.5.0-35-generic-x86_64-with-glibc2.31",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-06-04T08:15:00.462985",
+    "startedAt": "2024-06-04T08:14:59.539284",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "share/pointnet.pytorch/model.ipynb",
+    "codePathLocal": null,
+    "root": "/root/share/pointnet.pytorch",
+    "git": {
+        "remote": "https://github.com/hunsoo0823/pointnet.pytorch.git",
+        "commit": "bafbf401e0af19be3262e448c59313fd2be0e421"
+    },
+    "email": null,
+    "host": "458d3c896fe3",
+    "username": "root",
+    "executable": "/opt/conda/bin/python",
+    "cpu_count": 14,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 1.5602500000000004,
+        "min": 800.0,
+        "max": 4620.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1.472,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.271,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.421,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.416,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.182,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.42,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 2.849,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.432,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1.365,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 468.2821350097656,
+            "used": 48.11125564575195
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3060 Ti",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.17782211303711
+    }
+}
