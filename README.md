@@ -1,25 +1,33 @@
 # PointNet.pytorch
 This repo is implementation for PointNet(https://arxiv.org/abs/1612.00593) in pytorch. The model is in `pointnet/model.py`.
 
-I have upgraded the origin repository with the following changes:
+# Repository Upgrade Details
 
-Added Weights & Biases (WandB) integration.
-Added YAML configuration support.
-Implemented linear warmup for the learning rate.
-Added early stopping (training dataset split into train and validation for this feature).
-Changed the optimizer from Adam to RAdam.
-Hyperparameters can be adjusted in the /config_yaml file.
-The repository has been tested with PyTorch 2.4.
+The origin repository has been upgraded with the following changes:  
+- Added **Weights & Biases (WandB)** integration.  
+- Added **YAML** configuration support.  
+- Implemented **linear warmup** for the learning rate.  
+- Added **early stopping** (training dataset split into train and validation for this feature).  
+- Changed the optimizer from **Adam** to **RAdam**.  
 
-I used the Docker image:
-pytorch:2.4.1-cuda12.4-cudnn9-devel
-Docker Hub: Image Details
+Hyperparameters can be adjusted in the `/config_yaml` file.  
+The repository has been tested with **PyTorch 2.4**.
 
-Notes:
-cuDNN Version: The Docker image does not include cuDNN. I manually downloaded and installed cuDNN 9. Please ensure the correct version is installed.
-Weights & Biases:
-If you do not have a WandB account, follow the Quickstart Guide to create one.
-Retrieve your API key from this link.
+## Docker Environment
+
+I used the Docker image:  
+`pytorch:2.4.1-cuda12.4-cudnn9-devel`  
+Docker Hub: [Image Details](https://hub.docker.com/layers/pytorch/pytorch/2.4.1-cuda12.4-cudnn9-devel/images/sha256-9859f8978cdfad549d72baa41d0b0bb7a5b46210a1446e09bf32600a968badb8)
+
+### Notes:
+- **cuDNN Version**:  
+  The Docker image does not include cuDNN. I manually downloaded and installed **cuDNN 9**.  
+  Please ensure the correct version is installed.
+
+- **Weights & Biases (WandB)**:  
+  If you do not have a WandB account, follow the [Quickstart Guide](https://docs.wandb.ai/quickstart/) to create one.  
+  Retrieve your API key from [this link](https://app.wandb.ai/authorize).  
+
 
 
 # Download data and running
