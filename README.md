@@ -1,22 +1,26 @@
 # PointNet.pytorch
 This repo is implementation for PointNet(https://arxiv.org/abs/1612.00593) in pytorch. The model is in `pointnet/model.py`.
 
-I upgrade origin repo.
-the upgrade list is adding WanDB, yaml, Early stopping, changing Adam optimizer to RAdam
-TO add Early stopping, I split train dataset to train, val 
-so if you want to change hyperparameter see /config_yaml
-It is tested with pytorch-2.4.
+I have upgraded the origin repository with the following changes:
 
-I use Docker image pytorch:2.4.1-cuda12.4-cudnn9-devel
-https://hub.docker.com/layers/pytorch/pytorch/2.4.1-cuda12.4-cudnn9-devel/images/sha256-9859f8978cdfad549d72baa41d0b0bb7a5b46210a1446e09bf32600a968badb8
-please check cuddn version!
-there is no cuddn in image, so i download cuddn9
+Added Weights & Biases (WandB) integration.
+Added YAML configuration support.
+Implemented linear warmup for the learning rate.
+Added early stopping (training dataset split into train and validation for this feature).
+Changed the optimizer from Adam to RAdam.
+Hyperparameters can be adjusted in the /config_yaml file.
+The repository has been tested with PyTorch 2.4.
 
-if you have no wandb profile
-see this https://docs.wandb.ai/quickstart/, and crate profile
+I used the Docker image:
+pytorch:2.4.1-cuda12.4-cudnn9-devel
+Docker Hub: Image Details
 
-you can get API KEY in this link
-https://app.wandb.ai/authorize
+Notes:
+cuDNN Version: The Docker image does not include cuDNN. I manually downloaded and installed cuDNN 9. Please ensure the correct version is installed.
+Weights & Biases:
+If you do not have a WandB account, follow the Quickstart Guide to create one.
+Retrieve your API key from this link.
+
 
 # Download data and running
 
@@ -75,9 +79,10 @@ Segmentation on  [A subset of shapenet](http://web.stanford.edu/~ericyi/project_
 Note that this implementation trains each class separately, so classes with fewer data will have slightly lower performance than reference implementation.
 
 Sample segmentation result:
-![seg](https://raw.githubusercontent.com/fxia22/pointnet.pytorch/master/misc/show3d.png?token=AE638Oy51TL2HDCaeCF273X_-Bsy6-E2ks5Y_BUzwA%3D%3D)
+![seg](https://github.com/hunsoo0823/pointnet.pytorch/blob/master/misc/show3d.png)
 
 Wandb result:
+![wandb](https://github.com/hunsoo0823/pointnet.pytorch/blob/master/misc/wandb.png)
 
 
 thank you! fxia22 i learn a lot in your code
