@@ -1,0 +1,119 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type         | Params | Mode
+-----------------------------------------------
+0 | feat  | PointNetfeat | 2.8 M  | train
+1 | conv1 | Conv1d       | 557 K  | train
+2 | conv2 | Conv1d       | 131 K  | train
+3 | conv3 | Conv1d       | 32.9 K | train
+4 | conv4 | Conv1d       | 516    | train
+5 | bn1   | BatchNorm1d  | 1.0 K  | train
+6 | bn2   | BatchNorm1d  | 512    | train
+7 | bn3   | BatchNorm1d  | 256    | train
+-----------------------------------------------
+3.5 M     Trainable params
+0         Non-trainable params
+3.5 M     Total params
+14.111    Total estimated model params size (MB)
+39        Modules in train mode
+0         Modules in eval mode
+Epoch 13: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 75/75 [00:09<00:00,  8.06it/s, v_num=6p21]
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:476: Your `val_dataloader`'s sampler has shuffling enabled, it is strongly recommended that you turn shuffling off for val/test dataloaders.
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:425: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py:310: The number of training batches (75) is smaller than the logging interval Trainer(log_every_n_steps=100). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+                                                                                                                                                                                                     
+Metric val_loss improved. New best score: 1.548
+Epoch 0, global step 75: 'val_loss' reached 1.54820 (best 1.54820), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=0-val_loss=1.548.ckpt' as top 3
+Metric val_loss improved by 0.020 >= min_delta = 0.0. New best score: 1.528
+Epoch 1, global step 150: 'val_loss' reached 1.52780 (best 1.52780), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=1-val_loss=1.528.ckpt' as top 3
+Epoch 2, global step 225: 'val_loss' reached 1.54216 (best 1.52780), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=2-val_loss=1.542.ckpt' as top 3
+Metric val_loss improved by 0.031 >= min_delta = 0.0. New best score: 1.497
+Epoch 3, global step 300: 'val_loss' reached 1.49673 (best 1.49673), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=3-val_loss=1.497.ckpt' as top 3
+Metric val_loss improved by 0.046 >= min_delta = 0.0. New best score: 1.451
+Epoch 4, global step 375: 'val_loss' reached 1.45116 (best 1.45116), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=4-val_loss=1.451.ckpt' as top 3
+Metric val_loss improved by 0.044 >= min_delta = 0.0. New best score: 1.408
+Epoch 5, global step 450: 'val_loss' reached 1.40759 (best 1.40759), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=5-val_loss=1.408.ckpt' as top 3
+Metric val_loss improved by 0.079 >= min_delta = 0.0. New best score: 1.329
+Epoch 6, global step 525: 'val_loss' reached 1.32888 (best 1.32888), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=6-val_loss=1.329.ckpt' as top 3
+Metric val_loss improved by 0.096 >= min_delta = 0.0. New best score: 1.233
+Epoch 7, global step 600: 'val_loss' reached 1.23267 (best 1.23267), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=7-val_loss=1.233.ckpt' as top 3
+Metric val_loss improved by 0.119 >= min_delta = 0.0. New best score: 1.114
+Epoch 8, global step 675: 'val_loss' reached 1.11376 (best 1.11376), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=8-val_loss=1.114.ckpt' as top 3
+Metric val_loss improved by 0.120 >= min_delta = 0.0. New best score: 0.994
+Epoch 9, global step 750: 'val_loss' reached 0.99397 (best 0.99397), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=9-val_loss=0.994.ckpt' as top 3
+Metric val_loss improved by 0.101 >= min_delta = 0.0. New best score: 0.893
+Epoch 10, global step 825: 'val_loss' reached 0.89270 (best 0.89270), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=10-val_loss=0.893.ckpt' as top 3
+Metric val_loss improved by 0.107 >= min_delta = 0.0. New best score: 0.786
+Epoch 11, global step 900: 'val_loss' reached 0.78565 (best 0.78565), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=11-val_loss=0.786.ckpt' as top 3
+Metric val_loss improved by 0.069 >= min_delta = 0.0. New best score: 0.717
+Epoch 12, global step 975: 'val_loss' reached 0.71684 (best 0.71684), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=12-val_loss=0.717.ckpt' as top 3
+Metric val_loss improved by 0.066 >= min_delta = 0.0. New best score: 0.651
+Epoch 13, global step 1050: 'val_loss' reached 0.65066 (best 0.65066), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=13-val_loss=0.651.ckpt' as top 3
+Metric val_loss improved by 0.029 >= min_delta = 0.0. New best score: 0.622
+Epoch 14, global step 1125: 'val_loss' reached 0.62193 (best 0.62193), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=14-val_loss=0.622.ckpt' as top 3
+Metric val_loss improved by 0.045 >= min_delta = 0.0. New best score: 0.577
+Epoch 15, global step 1200: 'val_loss' reached 0.57692 (best 0.57692), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=15-val_loss=0.577.ckpt' as top 3
+Metric val_loss improved by 0.029 >= min_delta = 0.0. New best score: 0.548
+Epoch 16, global step 1275: 'val_loss' reached 0.54789 (best 0.54789), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=16-val_loss=0.548.ckpt' as top 3
+Metric val_loss improved by 0.016 >= min_delta = 0.0. New best score: 0.531
+Epoch 17, global step 1350: 'val_loss' reached 0.53147 (best 0.53147), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=17-val_loss=0.531.ckpt' as top 3
+Metric val_loss improved by 0.037 >= min_delta = 0.0. New best score: 0.495
+Epoch 18, global step 1425: 'val_loss' reached 0.49453 (best 0.49453), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=18-val_loss=0.495.ckpt' as top 3
+Metric val_loss improved by 0.011 >= min_delta = 0.0. New best score: 0.484
+Epoch 19, global step 1500: 'val_loss' reached 0.48364 (best 0.48364), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=19-val_loss=0.484.ckpt' as top 3
+Metric val_loss improved by 0.027 >= min_delta = 0.0. New best score: 0.457
+Epoch 20, global step 1575: 'val_loss' reached 0.45701 (best 0.45701), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=20-val_loss=0.457.ckpt' as top 3
+Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.450
+Epoch 21, global step 1650: 'val_loss' reached 0.45030 (best 0.45030), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=21-val_loss=0.450.ckpt' as top 3
+Metric val_loss improved by 0.022 >= min_delta = 0.0. New best score: 0.428
+Epoch 22, global step 1725: 'val_loss' reached 0.42821 (best 0.42821), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=22-val_loss=0.428.ckpt' as top 3
+Metric val_loss improved by 0.013 >= min_delta = 0.0. New best score: 0.415
+Epoch 23, global step 1800: 'val_loss' reached 0.41509 (best 0.41509), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=23-val_loss=0.415.ckpt' as top 3
+Metric val_loss improved by 0.014 >= min_delta = 0.0. New best score: 0.401
+Epoch 24, global step 1875: 'val_loss' reached 0.40133 (best 0.40133), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=24-val_loss=0.401.ckpt' as top 3
+Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.394
+Epoch 25, global step 1950: 'val_loss' reached 0.39418 (best 0.39418), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=25-val_loss=0.394.ckpt' as top 3
+Metric val_loss improved by 0.021 >= min_delta = 0.0. New best score: 0.373
+Epoch 26, global step 2025: 'val_loss' reached 0.37272 (best 0.37272), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=26-val_loss=0.373.ckpt' as top 3
+Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.365
+Epoch 27, global step 2100: 'val_loss' reached 0.36485 (best 0.36485), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=27-val_loss=0.365.ckpt' as top 3
+Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.350
+Epoch 28, global step 2175: 'val_loss' reached 0.34984 (best 0.34984), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=28-val_loss=0.350.ckpt' as top 3
+Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.342
+Epoch 29, global step 2250: 'val_loss' reached 0.34204 (best 0.34204), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=29-val_loss=0.342.ckpt' as top 3
+Metric val_loss improved by 0.013 >= min_delta = 0.0. New best score: 0.329
+Epoch 30, global step 2325: 'val_loss' reached 0.32941 (best 0.32941), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=30-val_loss=0.329.ckpt' as top 3
+Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.329
+Epoch 31, global step 2400: 'val_loss' reached 0.32934 (best 0.32934), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=31-val_loss=0.329.ckpt' as top 3
+Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.324
+Epoch 32, global step 2475: 'val_loss' reached 0.32402 (best 0.32402), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=32-val_loss=0.324.ckpt' as top 3
+Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.315
+Epoch 33, global step 2550: 'val_loss' reached 0.31537 (best 0.31537), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=33-val_loss=0.315.ckpt' as top 3
+Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.308
+Epoch 34, global step 2625: 'val_loss' reached 0.30761 (best 0.30761), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=34-val_loss=0.308.ckpt' as top 3
+Metric val_loss improved by 0.011 >= min_delta = 0.0. New best score: 0.296
+Epoch 35, global step 2700: 'val_loss' reached 0.29640 (best 0.29640), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=35-val_loss=0.296.ckpt' as top 3
+Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.296
+Epoch 36, global step 2775: 'val_loss' reached 0.29639 (best 0.29639), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=36-val_loss=0.296.ckpt' as top 3
+Epoch 37, global step 2850: 'val_loss' reached 0.30036 (best 0.29639), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=37-val_loss=0.300.ckpt' as top 3
+Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.289
+Epoch 38, global step 2925: 'val_loss' reached 0.28913 (best 0.28913), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=38-val_loss=0.289.ckpt' as top 3
+Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.288
+Epoch 39, global step 3000: 'val_loss' reached 0.28765 (best 0.28765), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=39-val_loss=0.288.ckpt' as top 3
+Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.280
+Epoch 40, global step 3075: 'val_loss' reached 0.27954 (best 0.27954), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=40-val_loss=0.280.ckpt' as top 3
+Epoch 41, global step 3150: 'val_loss' reached 0.28571 (best 0.27954), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=41-val_loss=0.286.ckpt' as top 3
+Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.273
+Epoch 42, global step 3225: 'val_loss' reached 0.27328 (best 0.27328), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=42-val_loss=0.273.ckpt' as top 3
+Epoch 43, global step 3300: 'val_loss' reached 0.27360 (best 0.27328), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=43-val_loss=0.274.ckpt' as top 3
+Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.265
+Epoch 44, global step 3375: 'val_loss' reached 0.26504 (best 0.26504), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=44-val_loss=0.265.ckpt' as top 3
+Epoch 45, global step 3450: 'val_loss' reached 0.26703 (best 0.26504), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=45-val_loss=0.267.ckpt' as top 3
+Epoch 46, global step 3525: 'val_loss' reached 0.27047 (best 0.26504), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=46-val_loss=0.270.ckpt' as top 3
+Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.263
+Epoch 47, global step 3600: 'val_loss' reached 0.26302 (best 0.26302), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=47-val_loss=0.263.ckpt' as top 3
+Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.257
+Epoch 48, global step 3675: 'val_loss' reached 0.25656 (best 0.25656), saving model to '/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:33:43-PointNet-shapenet/weights/epoch=48-val_loss=0.257.ckpt' as top 3
+Epoch 49, global step 3750: 'val_loss' was not in top 3
+`Trainer.fit` stopped: `max_epochs=50` reached.

@@ -1,14 +1,29 @@
 # PointNet.pytorch
 This repo is implementation for PointNet(https://arxiv.org/abs/1612.00593) in pytorch. The model is in `pointnet/model.py`.
 
-It is tested with pytorch-1.0.
+I upgrade origin repo.
+the upgrade list is adding WanDB, yaml, Early stopping, changing Adam optimizer to RAdam
+TO add Early stopping, I split train dataset to train, val 
+so if you want to change hyperparameter see /config_yaml
+It is tested with pytorch-2.4.
+
+I use Docker image pytorch:2.4.1-cuda12.4-cudnn9-devel
+https://hub.docker.com/layers/pytorch/pytorch/2.4.1-cuda12.4-cudnn9-devel/images/sha256-9859f8978cdfad549d72baa41d0b0bb7a5b46210a1446e09bf32600a968badb8
+please check cuddn version!
+there is no cuddn in image, so i download cuddn9
+
+if you have no wandb profile
+see this https://docs.wandb.ai/quickstart/, and crate profile
+
+you can get API KEY in this link
+https://app.wandb.ai/authorize
 
 # Download data and running
 
 ```
-git clone https://github.com/fxia22/pointnet.pytorch
+git clone https://github.com/hunsoo0823/pointnet.pytorch.git
 cd pointnet.pytorch
-pip install -e .
+pip install -r requirements.txt
 ```
 
 Download and build visualization tool
@@ -21,8 +36,8 @@ bash download.sh #download dataset
 Training 
 ```
 cd utils
-python train_classification.py --dataset <dataset path> --nepoch=<number epochs> --dataset_type <modelnet40 | shapenet>
-python train_segmentation.py --dataset <dataset path> --nepoch=<number epochs> 
+python train_classification.py
+python train_segmentation.py
 ```
 
 Use `--feature_transform` to use feature transform.
@@ -62,7 +77,16 @@ Note that this implementation trains each class separately, so classes with fewe
 Sample segmentation result:
 ![seg](https://raw.githubusercontent.com/fxia22/pointnet.pytorch/master/misc/show3d.png?token=AE638Oy51TL2HDCaeCF273X_-Bsy6-E2ks5Y_BUzwA%3D%3D)
 
+Wandb result:
+
+
+thank you! fxia22 i learn a lot in your code
+
 # Links
 
 - [Project Page](http://stanford.edu/~rqi/pointnet/)
 - [Tensorflow implementation](https://github.com/charlesq34/pointnet)
+
+## To-Do List
+- [ ] Update new performacne
+- [ ] Add how to visualization

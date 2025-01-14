@@ -1,143 +1,155 @@
-from __future__ import print_function
-import argparse
-import os
-import random
+from typing import Optional
+from omegaconf import OmegaConf
+from omegaconf import DictConfig
+import hydra
+import pytorch_lightning as pl
 import torch
-import torch.nn.parallel
-import torch.optim as optim
-import torch.utils.data
+from datetime import datetime
+import os
+import sys
+import yaml
+
+parent_dir = os.path.dirname(os.getcwd())
+sys.path.append(parent_dir)
+
+from pointnet.model import PointNetDenseCls
+from data_utils import dataset_split
+from config_utils import register_config
+from config_utils import get_loggers
+from config_utils import get_callbacks
 from pointnet.dataset import ShapeNetDataset
-from pointnet.model import PointNetDenseCls, feature_transform_regularizer
-import torch.nn.functional as F
-from tqdm import tqdm
-import numpy as np
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    '--batchSize', type=int, default=32, help='input batch size')
-parser.add_argument(
-    '--workers', type=int, help='number of data loading workers', default=4)
-parser.add_argument(
-    '--nepoch', type=int, default=25, help='number of epochs to train for')
-parser.add_argument('--outf', type=str, default='seg', help='output folder')
-parser.add_argument('--model', type=str, default='', help='model path')
-parser.add_argument('--dataset', type=str, required=True, help="dataset path")
-parser.add_argument('--class_choice', type=str, default='Chair', help="class_choice")
-parser.add_argument('--feature_transform', action='store_true', help="use feature transform")
+def load_yaml(filename):
+    with open(filename, 'r') as file:
+        return yaml.safe_load(file)
 
-opt = parser.parse_args()
-print(opt)
+output_dir = os.path.join(parent_dir, "config_yaml")
+data_root = os.path.join(parent_dir, "data")
 
-opt.manualSeed = random.randint(1, 10000)  # fix seed
-print("Random Seed: ", opt.manualSeed)
-random.seed(opt.manualSeed)
-torch.manual_seed(opt.manualSeed)
+
+model_cfg_file = os.path.join(output_dir, "model_pointnet.yaml")
+optimizer_cfg_file = os.path.join(output_dir, "optimizer.yaml")
+data_cfg_file = os.path.join(output_dir, "data_shapenet.yaml")
+
+model_cfg = load_yaml(model_cfg_file)
+optimizer_cfg = load_yaml(optimizer_cfg_file)
+data_cfg = load_yaml(data_cfg_file)
+data_cfg["data_root"] = data_root
+
+
+_merged_cfg_presets = {
+    "PointNet": {
+        "opt": optimizer_cfg,
+        "data": data_cfg,
+        "model": model_cfg,
+    }
+}
+
+# clear config instance first
+hydra.core.global_hydra.GlobalHydra.instance().clear()
+
+# register preset configs
+register_config(_merged_cfg_presets)
+
+# initialize & mae config
+## select mode here ##
+# .................. #
+hydra.initialize(config_path=None, version_base="1.1")
+cfg = hydra.compose("PointNet")
+
+# override some cfg
+run_name = f"{datetime.now().isoformat(timespec='seconds')}-{cfg.model.name}-{cfg.data.name}"
+
+# Define other train configs & log_configs
+# Merge configs into one & register it to Hydra.
+
+project_root_dir = os.path.join(parent_dir, "runs", "pointnet-runs")
+
+
+save_dir = os.path.join(project_root_dir, run_name)
+run_root_dir = os.path.join(project_root_dir, run_name)
+
+train_cfg_file = os.path.join(output_dir, "train.yaml")
+log_cfg_file = os.path.join(output_dir, "log.yaml")
+
+train_cfg = load_yaml(train_cfg_file)
+train_cfg["run_root_dir"] = run_root_dir
+log_cfg = load_yaml(log_cfg_file)
+log_cfg["loggers"]["WandbLogger"]["project"] = "pointNet_seg"
+log_cfg["loggers"]["WandbLogger"]["name"] = run_name
+log_cfg["loggers"]["WandbLogger"]["save_dir"] = run_root_dir
+log_cfg["callbacks"]["ModelCheckpoint"]["dirpath"] = os.path.join(run_root_dir, "weights")
+
+
+OmegaConf.set_struct(cfg, False)
+cfg.train = train_cfg
+cfg.log = log_cfg
+
+# lock config
+OmegaConf.set_struct(cfg, True)
+
+data_root = cfg.data.data_root
 
 dataset = ShapeNetDataset(
-    root=opt.dataset,
+    root=data_root, 
     classification=False,
-    class_choice=[opt.class_choice])
-dataloader = torch.utils.data.DataLoader(
-    dataset,
-    batch_size=opt.batchSize,
-    shuffle=True,
-    num_workers=int(opt.workers))
+    class_choice=cfg.data.class_choice
+)
 
 test_dataset = ShapeNetDataset(
-    root=opt.dataset,
+    root=data_root,
     classification=False,
-    class_choice=[opt.class_choice],
     split='test',
-    data_augmentation=False)
-testdataloader = torch.utils.data.DataLoader(
-    test_dataset,
-    batch_size=opt.batchSize,
-    shuffle=True,
-    num_workers=int(opt.workers))
+    class_choice=cfg.data.class_choice,
+    data_augmentation=False
+)
 
-print(len(dataset), len(test_dataset))
-num_classes = dataset.num_seg_classes
-print('classes', num_classes)
-try:
-    os.makedirs(opt.outf)
-except OSError:
-    pass
+num_seg_classes = dataset.num_seg_classes
 
-blue = lambda x: '\033[94m' + x + '\033[0m'
+dataset = dataset_split(dataset, split=cfg.train.train_val_split)
+train_dataset = dataset["train"]
+val_dataset = dataset["val"]
 
-classifier = PointNetDenseCls(k=num_classes, feature_transform=opt.feature_transform)
+train_batch_size = cfg.train.train_batch_size
+val_batch_size = cfg.train.val_batch_size
+test_batch_size = cfg.train.test_batch_size
 
-if opt.model != '':
-    classifier.load_state_dict(torch.load(opt.model))
+train_dataloader = torch.utils.data.DataLoader(
+    train_dataset, batch_size=train_batch_size, shuffle=True, num_workers=0
+)
 
-optimizer = optim.Adam(classifier.parameters(), lr=0.001, betas=(0.9, 0.999))
-scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.5)
-classifier.cuda()
+val_dataloader = torch.utils.data.DataLoader(
+    val_dataset, batch_size=val_batch_size, shuffle=True, num_workers=0
+)
 
-num_batch = len(dataset) / opt.batchSize
+test_dataloader = torch.utils.data.DataLoader(
+    test_dataset, batch_size=test_batch_size, shuffle=False, num_workers=0
+)
 
-for epoch in range(opt.nepoch):
-    scheduler.step()
-    for i, data in enumerate(dataloader, 0):
-        points, target = data
-        points = points.transpose(2, 1)
-        points, target = points.cuda(), target.cuda()
-        optimizer.zero_grad()
-        classifier = classifier.train()
-        pred, trans, trans_feat = classifier(points)
-        pred = pred.view(-1, num_classes)
-        target = target.view(-1, 1)[:, 0] - 1
-        #print(pred.size(), target.size())
-        loss = F.nll_loss(pred, target)
-        if opt.feature_transform:
-            loss += feature_transform_regularizer(trans_feat) * 0.001
-        loss.backward()
-        optimizer.step()
-        pred_choice = pred.data.max(1)[1]
-        correct = pred_choice.eq(target.data).cpu().sum()
-        print('[%d: %d/%d] train loss: %f accuracy: %f' % (epoch, i, num_batch, loss.item(), correct.item()/float(opt.batchSize * 2500)))
+def get_pl_model(cfg: DictConfig, checkpoint_path: Optional[str] = None):
 
-        if i % 10 == 0:
-            j, data = next(enumerate(testdataloader, 0))
-            points, target = data
-            points = points.transpose(2, 1)
-            points, target = points.cuda(), target.cuda()
-            classifier = classifier.eval()
-            pred, _, _ = classifier(points)
-            pred = pred.view(-1, num_classes)
-            target = target.view(-1, 1)[:, 0] - 1
-            loss = F.nll_loss(pred, target)
-            pred_choice = pred.data.max(1)[1]
-            correct = pred_choice.eq(target.data).cpu().sum()
-            print('[%d: %d/%d] %s loss: %f accuracy: %f' % (epoch, i, num_batch, blue('test'), loss.item(), correct.item()/float(opt.batchSize * 2500)))
+    if cfg.model.name == "PointNet":
+        model = PointNetDenseCls(cfg, num_seg_classes=num_seg_classes)
+    else:
+        raise NotImplementedError()
 
-    torch.save(classifier.state_dict(), '%s/seg_model_%s_%d.pth' % (opt.outf, opt.class_choice, epoch))
+    if checkpoint_path is not None:
+        model = model.load_from_checkpoint(checkpoint_path)
 
-## benchmark mIOU
-shape_ious = []
-for i,data in tqdm(enumerate(testdataloader, 0)):
-    points, target = data
-    points = points.transpose(2, 1)
-    points, target = points.cuda(), target.cuda()
-    classifier = classifier.eval()
-    pred, _, _ = classifier(points)
-    pred_choice = pred.data.max(2)[1]
+    return model
 
-    pred_np = pred_choice.cpu().data.numpy()
-    target_np = target.cpu().data.numpy() - 1
+model = get_pl_model(cfg)
 
-    for shape_idx in range(target_np.shape[0]):
-        parts = range(num_classes)#np.unique(target_np[shape_idx])
-        part_ious = []
-        for part in parts:
-            I = np.sum(np.logical_and(pred_np[shape_idx] == part, target_np[shape_idx] == part))
-            U = np.sum(np.logical_or(pred_np[shape_idx] == part, target_np[shape_idx] == part))
-            if U == 0:
-                iou = 1 #If the union of groundtruth and prediction points is empty, then count part IoU as 1
-            else:
-                iou = I / float(U)
-            part_ious.append(iou)
-        shape_ious.append(np.mean(part_ious))
+logger = get_loggers(cfg)
+callbacks = get_callbacks(cfg)
 
-print("mIOU for class {}: {}".format(opt.class_choice, np.mean(shape_ious)))
+trainer = pl.Trainer(
+    callbacks=callbacks,
+    logger=logger,
+    default_root_dir=cfg.train.run_root_dir,
+    num_sanity_val_steps=2,
+    **cfg.train.trainer_kwargs
+)
+
+trainer.fit(model, train_dataloader, val_dataloader)

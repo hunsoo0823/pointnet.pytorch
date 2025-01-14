@@ -1,0 +1,63 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type         | Params | Mode
+-----------------------------------------------
+0 | feat  | PointNetfeat | 2.8 M  | train
+1 | conv1 | Conv1d       | 557 K  | train
+2 | conv2 | Conv1d       | 131 K  | train
+3 | conv3 | Conv1d       | 32.9 K | train
+4 | conv4 | Conv1d       | 516    | train
+5 | bn1   | BatchNorm1d  | 1.0 K  | train
+6 | bn2   | BatchNorm1d  | 512    | train
+7 | bn3   | BatchNorm1d  | 256    | train
+-----------------------------------------------
+3.5 M     Trainable params
+0         Non-trainable params
+3.5 M     Total params
+14.111    Total estimated model params size (MB)
+39        Modules in train mode
+0         Modules in eval mode
+Sanity Checking DataLoader 0:   0%|                                                                                                                                            | 0/2 [00:00<?, ?it/s]16 16
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:476: Your `val_dataloader`'s sampler has shuffling enabled, it is strongly recommended that you turn shuffling off for val/test dataloaders.
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:425: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0:  50%|██████████████████████████████████████████████████████████████████                                                                  | 1/2 [00:00<00:00,  5.10it/s]16 16
+Epoch 0:   0%|                                                                                                                                                                | 0/75 [00:00<?, ?it/s]32 32
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py:310: The number of training batches (75) is smaller than the logging interval Trainer(log_every_n_steps=100). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+Epoch 0:   1%|█▊                                                                                                                                          | 1/75 [00:00<00:22,  3.24it/s, v_num=ykoj]32 32
+Epoch 0:   3%|███▋                                                                                                                                        | 2/75 [00:00<00:14,  5.18it/s, v_num=ykoj]32 32
+Epoch 0:   4%|█████▌                                                                                                                                      | 3/75 [00:00<00:12,  5.93it/s, v_num=ykoj]32 32
+Epoch 0:   5%|███████▍                                                                                                                                    | 4/75 [00:00<00:11,  6.41it/s, v_num=ykoj]32 32
+Epoch 0:   7%|█████████▎                                                                                                                                  | 5/75 [00:00<00:10,  6.77it/s, v_num=ykoj]32 32
+Epoch 0:   8%|███████████▏                                                                                                                                | 6/75 [00:00<00:10,  6.35it/s, v_num=ykoj]32 32
+Epoch 0:   9%|█████████████                                                                                                                               | 7/75 [00:01<00:09,  6.83it/s, v_num=ykoj]32 32
+Epoch 0:  11%|██████████████▉                                                                                                                             | 8/75 [00:01<00:09,  7.02it/s, v_num=ykoj]32 32
+Epoch 0:  12%|████████████████▊                                                                                                                           | 9/75 [00:01<00:09,  7.16it/s, v_num=ykoj]32 32
+Epoch 0:  13%|██████████████████▌                                                                                                                        | 10/75 [00:01<00:08,  7.27it/s, v_num=ykoj]32 32
+Epoch 0:  15%|████████████████████▍                                                                                                                      | 11/75 [00:01<00:08,  7.38it/s, v_num=ykoj]32 32
+Epoch 0:  16%|██████████████████████▏                                                                                                                    | 12/75 [00:01<00:08,  7.45it/s, v_num=ykoj]32 32
+Epoch 0:  17%|████████████████████████                                                                                                                   | 13/75 [00:01<00:08,  7.54it/s, v_num=ykoj]32 32
+Epoch 0:  19%|█████████████████████████▉                                                                                                                 | 14/75 [00:01<00:08,  7.56it/s, v_num=ykoj]32 32
+Epoch 0:  20%|███████████████████████████▊                                                                                                               | 15/75 [00:01<00:07,  7.60it/s, v_num=ykoj]32 32
+Epoch 0:  21%|█████████████████████████████▋                                                                                                             | 16/75 [00:02<00:07,  7.60it/s, v_num=ykoj]32 32
+Epoch 0:  23%|███████████████████████████████▌                                                                                                           | 17/75 [00:02<00:07,  7.63it/s, v_num=ykoj]32 32
+Epoch 0:  24%|█████████████████████████████████▎                                                                                                         | 18/75 [00:02<00:07,  7.66it/s, v_num=ykoj]32 32
+Epoch 0:  25%|███████████████████████████████████▏                                                                                                       | 19/75 [00:02<00:07,  7.70it/s, v_num=ykoj]32 32
+Epoch 0:  27%|█████████████████████████████████████                                                                                                      | 20/75 [00:02<00:07,  7.69it/s, v_num=ykoj]32 32
+Epoch 0:  28%|██████████████████████████████████████▉                                                                                                    | 21/75 [00:02<00:07,  7.71it/s, v_num=ykoj]32 32
+Epoch 0:  29%|████████████████████████████████████████▊                                                                                                  | 22/75 [00:02<00:06,  7.73it/s, v_num=ykoj]32 32
+Epoch 0:  31%|██████████████████████████████████████████▋                                                                                                | 23/75 [00:02<00:06,  7.76it/s, v_num=ykoj]32 32
+Epoch 0:  32%|████████████████████████████████████████████▍                                                                                              | 24/75 [00:03<00:06,  7.78it/s, v_num=ykoj]32 32
+Epoch 0:  33%|██████████████████████████████████████████████▎                                                                                            | 25/75 [00:03<00:06,  7.81it/s, v_num=ykoj]32 32
+Epoch 0:  35%|████████████████████████████████████████████████▏                                                                                          | 26/75 [00:03<00:06,  7.82it/s, v_num=ykoj]32 32
+Epoch 0:  36%|██████████████████████████████████████████████████                                                                                         | 27/75 [00:03<00:06,  7.84it/s, v_num=ykoj]32 32
+Epoch 0:  37%|███████████████████████████████████████████████████▉                                                                                       | 28/75 [00:03<00:05,  7.84it/s, v_num=ykoj]32 32
+Epoch 0:  39%|█████████████████████████████████████████████████████▋                                                                                     | 29/75 [00:03<00:05,  7.86it/s, v_num=ykoj]32 32
+Epoch 0:  40%|███████████████████████████████████████████████████████▌                                                                                   | 30/75 [00:03<00:05,  7.89it/s, v_num=ykoj]32 32
+Epoch 0:  41%|█████████████████████████████████████████████████████████▍                                                                                 | 31/75 [00:03<00:05,  7.87it/s, v_num=ykoj]32 32
+Epoch 0:  43%|███████████████████████████████████████████████████████████▎                                                                               | 32/75 [00:04<00:05,  7.90it/s, v_num=ykoj]32 32
+Epoch 0:  44%|█████████████████████████████████████████████████████████████▏                                                                             | 33/75 [00:04<00:05,  7.89it/s, v_num=ykoj]32 32
+Epoch 0:  45%|███████████████████████████████████████████████████████████████                                                                            | 34/75 [00:04<00:05,  7.89it/s, v_num=ykoj]32 32
+Epoch 0:  47%|████████████████████████████████████████████████████████████████▊                                                                          | 35/75 [00:04<00:05,  7.89it/s, v_num=ykoj]
+
+Detected KeyboardInterrupt, attempting graceful shutdown ...

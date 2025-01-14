@@ -1,0 +1,98 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name    | Type         | Params | Mode
+-------------------------------------------------
+0 | feat    | PointNetfeat | 2.8 M  | train
+1 | fc1     | Linear       | 524 K  | train
+2 | fc2     | Linear       | 131 K  | train
+3 | fc3     | Linear       | 4.1 K  | train
+4 | dropout | Dropout      | 0      | train
+5 | bn1     | BatchNorm1d  | 1.0 K  | train
+6 | bn2     | BatchNorm1d  | 512    | train
+7 | relu    | ReLU         | 0      | train
+-------------------------------------------------
+3.5 M     Trainable params
+0         Non-trainable params
+3.5 M     Total params
+13.861    Total estimated model params size (MB)
+39        Modules in train mode
+0         Modules in eval mode
+Sanity Checking DataLoader 0:   0%|                                                                                                                                            | 0/2 [00:00<?, ?it/s]16 16
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:476: Your `val_dataloader`'s sampler has shuffling enabled, it is strongly recommended that you turn shuffling off for val/test dataloaders.
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:425: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0:  50%|██████████████████████████████████████████████████████████████████                                                                  | 1/2 [00:00<00:00,  3.58it/s]16 16
+Epoch 0:   0%|                                                                                                                                                               | 0/342 [00:00<?, ?it/s]32 32
+/opt/conda/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=19` in the `DataLoader` to improve performance.
+Epoch 0:   0%|▍                                                                                                                                          | 1/342 [00:00<01:09,  4.91it/s, v_num=m8me]32 32
+Epoch 0:   1%|▊                                                                                                                                          | 2/342 [00:00<00:45,  7.51it/s, v_num=m8me]32 32
+Epoch 0:   1%|█▏                                                                                                                                         | 3/342 [00:00<00:38,  8.83it/s, v_num=m8me]32 32
+Epoch 0:   1%|█▋                                                                                                                                         | 4/342 [00:00<00:34,  9.70it/s, v_num=m8me]32 32
+Epoch 0:   1%|██                                                                                                                                         | 5/342 [00:00<00:32, 10.27it/s, v_num=m8me]32 32
+Epoch 0:   2%|██▍                                                                                                                                        | 6/342 [00:00<00:34,  9.87it/s, v_num=m8me]32 32
+Epoch 0:   2%|██▊                                                                                                                                        | 7/342 [00:00<00:32, 10.44it/s, v_num=m8me]32 32
+Epoch 0:   2%|███▎                                                                                                                                       | 8/342 [00:00<00:31, 10.69it/s, v_num=m8me]32 32
+Epoch 0:   3%|███▋                                                                                                                                       | 9/342 [00:00<00:30, 10.98it/s, v_num=m8me]32 32
+Epoch 0:   3%|████                                                                                                                                      | 10/342 [00:00<00:29, 11.19it/s, v_num=m8me]32 32
+Epoch 0:   3%|████▍                                                                                                                                     | 11/342 [00:00<00:29, 11.33it/s, v_num=m8me]32 32
+Epoch 0:   4%|████▊                                                                                                                                     | 12/342 [00:01<00:28, 11.52it/s, v_num=m8me]32 32
+Epoch 0:   4%|█████▏                                                                                                                                    | 13/342 [00:01<00:28, 11.64it/s, v_num=m8me]32 32
+Epoch 0:   4%|█████▋                                                                                                                                    | 14/342 [00:01<00:27, 11.74it/s, v_num=m8me]32 32
+Epoch 0:   4%|██████                                                                                                                                    | 15/342 [00:01<00:27, 11.85it/s, v_num=m8me]32 32
+Epoch 0:   5%|██████▍                                                                                                                                   | 16/342 [00:01<00:27, 11.94it/s, v_num=m8me]32 32
+Epoch 0:   5%|██████▊                                                                                                                                   | 17/342 [00:01<00:27, 12.01it/s, v_num=m8me]32 32
+Epoch 0:   5%|███████▎                                                                                                                                  | 18/342 [00:01<00:26, 12.09it/s, v_num=m8me]32 32
+Epoch 0:   6%|███████▋                                                                                                                                  | 19/342 [00:01<00:26, 12.17it/s, v_num=m8me]32 32
+Epoch 0:   6%|████████                                                                                                                                  | 20/342 [00:01<00:26, 12.20it/s, v_num=m8me]32 32
+Epoch 0:   6%|████████▍                                                                                                                                 | 21/342 [00:01<00:26, 12.27it/s, v_num=m8me]32 32
+Epoch 0:   6%|████████▉                                                                                                                                 | 22/342 [00:01<00:26, 12.31it/s, v_num=m8me]32 32
+Epoch 0:   7%|█████████▎                                                                                                                                | 23/342 [00:01<00:25, 12.35it/s, v_num=m8me]32 32
+Epoch 0:   7%|█████████▋                                                                                                                                | 24/342 [00:01<00:25, 12.40it/s, v_num=m8me]32 32
+Epoch 0:   7%|██████████                                                                                                                                | 25/342 [00:02<00:25, 12.46it/s, v_num=m8me]32 32
+Epoch 0:   8%|██████████▍                                                                                                                               | 26/342 [00:02<00:25, 12.48it/s, v_num=m8me]32 32
+Epoch 0:   8%|██████████▉                                                                                                                               | 27/342 [00:02<00:25, 12.53it/s, v_num=m8me]32 32
+Epoch 0:   8%|███████████▎                                                                                                                              | 28/342 [00:02<00:24, 12.57it/s, v_num=m8me]32 32
+Epoch 0:   8%|███████████▋                                                                                                                              | 29/342 [00:02<00:24, 12.59it/s, v_num=m8me]32 32
+Epoch 0:   9%|████████████                                                                                                                              | 30/342 [00:02<00:24, 12.60it/s, v_num=m8me]32 32
+Epoch 0:   9%|████████████▌                                                                                                                             | 31/342 [00:02<00:24, 12.64it/s, v_num=m8me]32 32
+Epoch 0:   9%|████████████▉                                                                                                                             | 32/342 [00:02<00:24, 12.68it/s, v_num=m8me]32 32
+Epoch 0:  10%|█████████████▎                                                                                                                            | 33/342 [00:02<00:24, 12.70it/s, v_num=m8me]32 32
+Epoch 0:  10%|█████████████▋                                                                                                                            | 34/342 [00:02<00:24, 12.71it/s, v_num=m8me]32 32
+Epoch 0:  10%|██████████████                                                                                                                            | 35/342 [00:02<00:24, 12.74it/s, v_num=m8me]32 32
+Epoch 0:  11%|██████████████▌                                                                                                                           | 36/342 [00:02<00:23, 12.77it/s, v_num=m8me]32 32
+Epoch 0:  11%|██████████████▉                                                                                                                           | 37/342 [00:02<00:23, 12.79it/s, v_num=m8me]32 32
+Epoch 0:  11%|███████████████▎                                                                                                                          | 38/342 [00:02<00:23, 12.80it/s, v_num=m8me]32 32
+Epoch 0:  11%|███████████████▋                                                                                                                          | 39/342 [00:03<00:23, 12.81it/s, v_num=m8me]32 32
+Epoch 0:  12%|████████████████▏                                                                                                                         | 40/342 [00:03<00:23, 12.82it/s, v_num=m8me]32 32
+Epoch 0:  12%|████████████████▌                                                                                                                         | 41/342 [00:03<00:23, 12.83it/s, v_num=m8me]32 32
+Epoch 0:  12%|████████████████▉                                                                                                                         | 42/342 [00:03<00:23, 12.85it/s, v_num=m8me]32 32
+Epoch 0:  13%|█████████████████▎                                                                                                                        | 43/342 [00:03<00:23, 12.86it/s, v_num=m8me]32 32
+Epoch 0:  13%|█████████████████▊                                                                                                                        | 44/342 [00:03<00:23, 12.87it/s, v_num=m8me]32 32
+Epoch 0:  13%|██████████████████▏                                                                                                                       | 45/342 [00:03<00:23, 12.89it/s, v_num=m8me]32 32
+Epoch 0:  13%|██████████████████▌                                                                                                                       | 46/342 [00:03<00:22, 12.89it/s, v_num=m8me]32 32
+Epoch 0:  14%|██████████████████▉                                                                                                                       | 47/342 [00:03<00:22, 12.91it/s, v_num=m8me]32 32
+Epoch 0:  14%|███████████████████▎                                                                                                                      | 48/342 [00:03<00:22, 12.92it/s, v_num=m8me]32 32
+Epoch 0:  14%|███████████████████▊                                                                                                                      | 49/342 [00:03<00:22, 12.93it/s, v_num=m8me]32 32
+Epoch 0:  15%|████████████████████▏                                                                                                                     | 50/342 [00:03<00:22, 12.95it/s, v_num=m8me]32 32
+Epoch 0:  15%|████████████████████▌                                                                                                                     | 51/342 [00:03<00:22, 12.96it/s, v_num=m8me]32 32
+Epoch 0:  15%|████████████████████▉                                                                                                                     | 52/342 [00:04<00:22, 12.97it/s, v_num=m8me]32 32
+Epoch 0:  15%|█████████████████████▍                                                                                                                    | 53/342 [00:04<00:22, 12.98it/s, v_num=m8me]32 32
+Epoch 0:  16%|█████████████████████▊                                                                                                                    | 54/342 [00:04<00:22, 12.99it/s, v_num=m8me]32 32
+Epoch 0:  16%|██████████████████████▏                                                                                                                   | 55/342 [00:04<00:22, 13.00it/s, v_num=m8me]32 32
+Epoch 0:  16%|██████████████████████▌                                                                                                                   | 56/342 [00:04<00:21, 13.00it/s, v_num=m8me]32 32
+Epoch 0:  17%|███████████████████████                                                                                                                   | 57/342 [00:04<00:21, 13.02it/s, v_num=m8me]32 32
+Epoch 0:  17%|███████████████████████▍                                                                                                                  | 58/342 [00:04<00:21, 13.03it/s, v_num=m8me]32 32
+Epoch 0:  17%|███████████████████████▊                                                                                                                  | 59/342 [00:04<00:21, 13.03it/s, v_num=m8me]32 32
+Epoch 0:  18%|████████████████████████▏                                                                                                                 | 60/342 [00:04<00:21, 13.04it/s, v_num=m8me]32 32
+Epoch 0:  18%|████████████████████████▌                                                                                                                 | 61/342 [00:04<00:21, 13.05it/s, v_num=m8me]32 32
+Epoch 0:  18%|█████████████████████████                                                                                                                 | 62/342 [00:04<00:21, 13.06it/s, v_num=m8me]32 32
+Epoch 0:  18%|█████████████████████████▍                                                                                                                | 63/342 [00:04<00:21, 13.07it/s, v_num=m8me]32 32
+Epoch 0:  19%|█████████████████████████▊                                                                                                                | 64/342 [00:04<00:21, 13.08it/s, v_num=m8me]32 32
+Epoch 0:  19%|██████████████████████████▏                                                                                                               | 65/342 [00:04<00:21, 13.09it/s, v_num=m8me]32 32
+Epoch 0:  19%|██████████████████████████▋                                                                                                               | 66/342 [00:05<00:21, 13.09it/s, v_num=m8me]32 32
+Epoch 0:  20%|███████████████████████████                                                                                                               | 67/342 [00:05<00:20, 13.11it/s, v_num=m8me]32 32
+Epoch 0:  20%|███████████████████████████▍                                                                                                              | 68/342 [00:05<00:20, 13.11it/s, v_num=m8me]32 32
+Epoch 0:  20%|███████████████████████████▊                                                                                                              | 69/342 [00:05<00:20, 13.12it/s, v_num=m8me]32 32
+Epoch 0:  20%|████████████████████████████▏                                                                                                             | 70/342 [00:05<00:20, 13.13it/s, v_num=m8me]32 32
+Epoch 0:  21%|████████████████████████████▋                                                                                                             | 71/342 [00:05<00:20, 13.14it/s, v_num=m8me]
+
+Detected KeyboardInterrupt, attempting graceful shutdown ...

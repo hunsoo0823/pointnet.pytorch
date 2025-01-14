@@ -1,0 +1,8 @@
+optimizers:
+- name: RAdam
+  kwargs:
+    lr: 0.001
+lr_schedulers:
+- name: LinearWarmupLR
+  kwargs:
+    warm_end_steps: 1000

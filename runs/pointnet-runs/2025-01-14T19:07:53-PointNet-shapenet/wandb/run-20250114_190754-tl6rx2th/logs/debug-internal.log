@@ -1,0 +1,15 @@
+{"time":"2025-01-14T19:07:54.29776774Z","level":"INFO","msg":"stream: starting","core version":"0.19.2","symlink path":"/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:07:53-PointNet-shapenet/wandb/run-20250114_190754-tl6rx2th/logs/debug-core.log"}
+{"time":"2025-01-14T19:07:54.401177496Z","level":"INFO","msg":"created new stream","id":"tl6rx2th"}
+{"time":"2025-01-14T19:07:54.401201832Z","level":"INFO","msg":"stream: started","id":"tl6rx2th"}
+{"time":"2025-01-14T19:07:54.401792277Z","level":"INFO","msg":"handler: started","stream_id":"tl6rx2th"}
+{"time":"2025-01-14T19:07:54.401841311Z","level":"INFO","msg":"writer: Do: started","stream_id":"tl6rx2th"}
+{"time":"2025-01-14T19:07:54.402500237Z","level":"INFO","msg":"sender: started","stream_id":"tl6rx2th"}
+{"time":"2025-01-14T19:07:55.137374581Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-14T19:07:59.325472174Z","level":"INFO","msg":"stream: closing","id":"tl6rx2th"}
+{"time":"2025-01-14T19:07:59.325883593Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-14T19:07:59.326229379Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-14T19:08:00.074756408Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-14T19:08:00.522445543Z","level":"INFO","msg":"handler: closed","stream_id":"tl6rx2th"}
+{"time":"2025-01-14T19:08:00.522488067Z","level":"INFO","msg":"writer: Close: closed","stream_id":"tl6rx2th"}
+{"time":"2025-01-14T19:08:00.522555562Z","level":"INFO","msg":"sender: closed","stream_id":"tl6rx2th"}
+{"time":"2025-01-14T19:08:00.522560562Z","level":"INFO","msg":"stream: closed","id":"tl6rx2th"}

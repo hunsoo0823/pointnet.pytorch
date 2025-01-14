@@ -1,4 +1,6 @@
 # With some modifications, source is from https://github.com/Bjarten/early-stopping-pytorch
+import torch
+import os
 
 class EarlyStopping:
     """Early stops the training if validation loss doesn't improve after a given patience."""

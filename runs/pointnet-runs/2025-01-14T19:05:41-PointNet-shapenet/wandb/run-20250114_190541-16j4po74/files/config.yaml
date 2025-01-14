@@ -1,0 +1,193 @@
+_wandb:
+    value:
+        cli_version: 0.19.2
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+        python_version: 3.11.9
+        t:
+            "1":
+                - 1
+                - 9
+                - 41
+                - 50
+                - 55
+                - 103
+            "2":
+                - 1
+                - 9
+                - 41
+                - 50
+                - 55
+                - 103
+            "3":
+                - 7
+                - 13
+                - 15
+                - 16
+                - 23
+                - 55
+                - 66
+            "4": 3.11.9
+            "5": 0.19.2
+            "8":
+                - 8
+            "12": 0.19.2
+            "13": linux-x86_64
+data_class_choice:
+    value: Chair
+data_data_root:
+    value: /root/pointnet.pytorch/data
+data_name:
+    value: shapenet
+data_num_points:
+    value: 2500
+log_callbacks_EarlyStopping_mode:
+    value: min
+log_callbacks_EarlyStopping_monitor:
+    value: val_loss
+log_callbacks_EarlyStopping_patience:
+    value: 3
+log_callbacks_EarlyStopping_verbose:
+    value: true
+log_callbacks_ModelCheckpoint_dirpath:
+    value: /root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:05:41-PointNet-shapenet/weights
+log_callbacks_ModelCheckpoint_filename:
+    value: '{epoch}-{val_loss:.3f}'
+log_callbacks_ModelCheckpoint_mode:
+    value: min
+log_callbacks_ModelCheckpoint_monitor:
+    value: val_loss
+log_callbacks_ModelCheckpoint_save_top_k:
+    value: 3
+log_callbacks_ModelCheckpoint_verbose:
+    value: true
+log_loggers_WandbLogger_name:
+    value: 2025-01-14T19:05:41-PointNet-shapenet
+log_loggers_WandbLogger_save_dir:
+    value: /root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:05:41-PointNet-shapenet
+log_loggers_WandbLogger_tags:
+    value:
+        - pointnet
+log_project:
+    value: pointNet_seg
+model_cls_dropout:
+    value: 0.3
+model_cls_layer1_in_feature:
+    value: 1024
+model_cls_layer1_out_feature:
+    value: 512
+model_cls_layer2_in_feature:
+    value: 512
+model_cls_layer2_out_feature:
+    value: 256
+model_cls_layer3_in_feature:
+    value: 256
+model_cls_layer3_out_feature:
+    value: 16
+model_densecls_k:
+    value: 16
+model_densecls_layer1_conv1d_in_channel:
+    value: 1088
+model_densecls_layer1_conv1d_kernel_size:
+    value: 1
+model_densecls_layer1_conv1d_out_channel:
+    value: 512
+model_densecls_layer2_conv1d_in_channel:
+    value: 512
+model_densecls_layer2_conv1d_kernel_size:
+    value: 1
+model_densecls_layer2_conv1d_out_channel:
+    value: 256
+model_densecls_layer3_conv1d_in_channel:
+    value: 256
+model_densecls_layer3_conv1d_kernel_size:
+    value: 1
+model_densecls_layer3_conv1d_out_channel:
+    value: 128
+model_densecls_layer4_conv1d_in_channel:
+    value: 128
+model_densecls_layer4_conv1d_kernel_size:
+    value: 1
+model_feat_feature_transform:
+    value: true
+model_feat_layer1_conv1d_in_channel:
+    value: 3
+model_feat_layer1_conv1d_kernel_size:
+    value: 1
+model_feat_layer1_conv1d_out_channel:
+    value: 64
+model_feat_layer2_conv1d_in_channel:
+    value: 64
+model_feat_layer2_conv1d_kernel_size:
+    value: 1
+model_feat_layer2_conv1d_out_channel:
+    value: 128
+model_feat_layer3_conv1d_in_channel:
+    value: 128
+model_feat_layer3_conv1d_kernel_size:
+    value: 1
+model_feat_layer3_conv1d_out_channel:
+    value: 1024
+model_name:
+    value: PointNet
+model_stn_k:
+    value: 64
+model_stn_layer1_conv1d_in_channel:
+    value: 3
+model_stn_layer1_conv1d_kernel_size:
+    value: 1
+model_stn_layer1_conv1d_out_channel:
+    value: 64
+model_stn_layer2_conv1d_in_channel:
+    value: 64
+model_stn_layer2_conv1d_kernel_size:
+    value: 1
+model_stn_layer2_conv1d_out_channel:
+    value: 128
+model_stn_layer3_conv1d_in_channel:
+    value: 128
+model_stn_layer3_conv1d_kernel_size:
+    value: 1
+model_stn_layer3_conv1d_out_channel:
+    value: 1024
+model_stn_layer4_fc1_in_features:
+    value: 1024
+model_stn_layer4_fc1_out_features:
+    value: 512
+model_stn_layer5_fc2_in_features:
+    value: 512
+model_stn_layer5_fc2_out_features:
+    value: 256
+model_stn_layer6_fc3_in_features:
+    value: 256
+model_stn_layer6_fc3_out_features:
+    value: 9
+opt_lr_schedulers:
+    value:
+        - '{''name'': ''LinearWarmupLR'', ''kwargs'': {''warm_end_steps'': 1000}}'
+opt_optimizers:
+    value:
+        - '{''name'': ''RAdam'', ''kwargs'': {''lr'': 0.001}}'
+train_run_root_dir:
+    value: /root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:05:41-PointNet-shapenet
+train_test_batch_size:
+    value: 32
+train_train_batch_size:
+    value: 32
+train_train_val_split:
+    value:
+        - 0.9
+        - 0.1
+train_trainer_kwargs_accelerator:
+    value: auto
+train_trainer_kwargs_log_every_n_steps:
+    value: 100
+train_trainer_kwargs_max_epochs:
+    value: 50
+train_trainer_kwargs_val_check_interval:
+    value: 1
+train_val_batch_size:
+    value: 16

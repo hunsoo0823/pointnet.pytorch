@@ -1,0 +1,64 @@
+name: PointNet
+cls:
+  layer1:
+    in_feature: 1024
+    out_feature: 512
+  layer2:
+    in_feature: 512
+    out_feature: 256
+  layer3:
+    in_feature: 256
+  dropout: 0.3
+densecls:
+  layer1:
+    conv1d_in_channel: 1088
+    conv1d_out_channel: 512
+    conv1d_kernel_size: 1
+  layer2:
+    conv1d_in_channel: 512
+    conv1d_out_channel: 256
+    conv1d_kernel_size: 1
+  layer3:
+    conv1d_in_channel: 256
+    conv1d_out_channel: 128
+    conv1d_kernel_size: 1
+  layer4:
+    conv1d_in_channel: 128
+    conv1d_kernel_size: 1
+feat:
+  layer1:
+    conv1d_in_channel: 3
+    conv1d_out_channel: 64
+    conv1d_kernel_size: 1
+  layer2:
+    conv1d_in_channel: 64
+    conv1d_out_channel: 128
+    conv1d_kernel_size: 1
+  layer3:
+    conv1d_in_channel: 128
+    conv1d_out_channel: 1024
+    conv1d_kernel_size: 1
+  feature_transform: true
+stn:
+  k: 64
+  layer1:
+    conv1d_in_channel: 3
+    conv1d_out_channel: 64
+    conv1d_kernel_size: 1
+  layer2:
+    conv1d_in_channel: 64
+    conv1d_out_channel: 128
+    conv1d_kernel_size: 1
+  layer3:
+    conv1d_in_channel: 128
+    conv1d_out_channel: 1024
+    conv1d_kernel_size: 1
+  layer4:
+    fc1_in_features: 1024
+    fc1_out_features: 512
+  layer5:
+    fc2_in_features: 512
+    fc2_out_features: 256
+  layer6:
+    fc3_in_features: 256
+    fc3_out_features: 9

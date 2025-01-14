@@ -1,0 +1,15 @@
+{"time":"2025-01-14T19:26:48.225818145Z","level":"INFO","msg":"stream: starting","core version":"0.19.2","symlink path":"/root/pointnet.pytorch/runs/pointnet-runs/2025-01-14T19:26:47-PointNet-shapenet/wandb/run-20250114_192648-tovrvxbc/logs/debug-core.log"}
+{"time":"2025-01-14T19:26:48.329655305Z","level":"INFO","msg":"created new stream","id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:48.329682288Z","level":"INFO","msg":"stream: started","id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:48.329871126Z","level":"INFO","msg":"handler: started","stream_id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:48.330427865Z","level":"INFO","msg":"writer: Do: started","stream_id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:48.330894083Z","level":"INFO","msg":"sender: started","stream_id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:49.017244588Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-14T19:26:51.998458383Z","level":"INFO","msg":"stream: closing","id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:51.998490573Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-14T19:26:51.999017496Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-14T19:26:52.7576776Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-14T19:26:53.033394704Z","level":"INFO","msg":"handler: closed","stream_id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:53.033428293Z","level":"INFO","msg":"writer: Close: closed","stream_id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:53.033463751Z","level":"INFO","msg":"sender: closed","stream_id":"tovrvxbc"}
+{"time":"2025-01-14T19:26:53.033486795Z","level":"INFO","msg":"stream: closed","id":"tovrvxbc"}

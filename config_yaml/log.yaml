@@ -1,0 +1,16 @@
+loggers:
+  WandbLogger:
+    tags:
+    - pointnet
+callbacks:
+  ModelCheckpoint:
+    save_top_k: 3
+    monitor: val_loss
+    mode: min
+    verbose: true
+    filename: '{epoch}-{val_loss:.3f}'
+  EarlyStopping:
+    monitor: val_loss
+    mode: min
+    patience: 3
+    verbose: true

@@ -1,1 +1,0 @@
-{"learning_rate": 1.6e-05, "_timestamp": 1717490102.9057708, "_runtime": 432.0974156856537, "_step": 5888, "train_loss": 0.09374091029167175, "train_acc": 0.96875, "epoch": 16, "trainer/global_step": 5813, "val_loss": 0.11628521978855133, "val_acc": 0.9621087312698364, "_wandb": {"runtime": 387}}
